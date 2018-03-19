@@ -43,14 +43,5 @@ class database extends PDO{
             echo"erro: ". $e->getMessage();
         }
     }
-
-
-
-
 }
-
-
-
-
-
 ?>
