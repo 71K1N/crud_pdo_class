@@ -2,12 +2,12 @@
 /*
 CLASSE:             DATABASE
 AUTOR:              Luiz Carlos da Silva
-DATA DE CRIAÇÃO:    19/03/18
+DATA DE CRIAÇÃO:    19/03/18-10:00
 ================================================
 1   -   CONSTRUTOR  -   LUIZ CARLOS -   19-03-18
 2   -   SELECT      -   LUIZ CARLOS -   19-03-18
 3   -   INSERT      -   LUIZ CARLOS -   19-03-18
-4   -   UPDTAE      -   LUIZ CARLOS -   19-03-18
+4   -   UPDATE      -   LUIZ CARLOS -   19-03-18
 5   -   DELETE      -   LUIZ CARLOS -   20-03-18
 6   -   DESCONECTAR -   LUIZ CARLOS -   20-03-18
 ================================================
