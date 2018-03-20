@@ -1,9 +1,16 @@
 <?php
-
-/**
- * Class database
- * @author Luiz Carlos da Silva
- * @data 19/03/18
+/*
+CLASSE:             DATABASE
+AUTOR:              Luiz Carlos da Silva
+DATA DE CRIAÇÃO:    19/03/18
+================================================
+1   -   CONSTRUTOR  -   LUIZ CARLOS -   19-03-18
+2   -   SELECT      -   LUIZ CARLOS -   19-03-18
+3   -   INSERT      -   LUIZ CARLOS -   19-03-18
+4   -   UPDTAE      -   LUIZ CARLOS -   19-03-18
+5   -   DELETE      -   LUIZ CARLOS -   20-03-18
+6   -   DESCONECTAR -   LUIZ CARLOS -   20-03-18
+================================================
  */
 class database extends PDO{
     public $select="";
@@ -11,7 +18,9 @@ class database extends PDO{
     public $update="";
     public $delete="";
 
+    //==================================================================================================================
     //CONSTRUCT
+    //==================================================================================================================
     public function __construct($dsn="mysql:host=localhost;dbname=pdo",$usuario="root",$senha="")
     {
         try{
@@ -20,8 +29,9 @@ class database extends PDO{
             echo "ERRO: ".$e->getMessage();
         }
     }
-
-    //SELECT
+    //==================================================================================================================
+    //  SELECT
+    //==================================================================================================================
     public function Select()
     {
         try
@@ -29,19 +39,52 @@ class database extends PDO{
             $resultado=$this->query($this->select);
             $this->dados =$resultado->fetchAll();
         }catch (PDOException $e){
-            echo"erro: ". $e->getMessage();
+            echo"ERRO: ". $e->getMessage();
         }
     }
-
-    //INSERT
+    //==================================================================================================================
+    //  INSERT
+    //==================================================================================================================
     public function Insert()
     {
         try
         {
            $this->query($this->insert);
         }catch (PDOException $e){
-            echo"erro: ". $e->getMessage();
+            echo"ERRO: ". $e->getMessage();
         }
+    }
+    //==================================================================================================================
+    //  UPDATE
+    //==================================================================================================================
+    public function Update()
+    {
+        try
+        {
+            $this->query($this->update);
+        }catch (PDOException $e){
+            echo"ERRO: ". $e->getMessage();
+        }
+    }
+    //==================================================================================================================
+    //  DELETE
+    //==================================================================================================================
+    public function Delete()
+    {
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try
+        {
+           $this->query($this->delete);
+        }catch (PDOException $e){
+            echo"ERRO: ". $e->getMessage();
+        }
+    }
+    //==================================================================================================================
+    //  DESCONECTAR
+    //==================================================================================================================
+    public function Desconectar()
+    {
+        $this->conn = null;
     }
 }
 ?>
