@@ -2,7 +2,7 @@
 /*
 CLASSE:             DATABASE
 AUTOR:              Luiz Carlos da Silva
-DATA DE CRIAÇÃO:    19/03/18-10:00
+DATA DE CRIAÃ‡ÃƒO:    19/03/18-10:00
 ================================================
 1   -   CONSTRUTOR  -   LUIZ CARLOS -   19-03-18
 2   -   SELECT      -   LUIZ CARLOS -   19-03-18
@@ -37,7 +37,7 @@ class database extends PDO{
         try
         {
             $resultado=$this->query($this->select);
-            $this->dados =$resultado->fetchAll();
+            $this->dados =$resultado->fetchAll(PDO::FETCH_ASSOC);
         }catch (PDOException $e){
             echo"ERRO: ". $e->getMessage();
         }
