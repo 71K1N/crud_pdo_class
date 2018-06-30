@@ -1,35 +1,70 @@
 <?php
-
-include 'database.php';
-$table="";
-
-class crud
+/*
+CLASSE:             CRUD rest
+AUTOR:              Luiz Carlos da Silva
+DATA DE CRIAÇÃO:    25/05/18-15:16
+=====================================================
+1   -   seleciona       -   LUIZ CARLOS -   25-05-18
+2   -   selecionaTodos  -   LUIZ CARLOS -   25-05-18
+3   -   insere          -   LUIZ CARLOS -   25-05-18
+4   -   atualiza        -   LUIZ CARLOS -   25-05-18
+5   -   apaga           -   LUIZ CARLOS -   25-05-18
+=====================================================
+ */
+include 'conection.php';
+class crud extends conection
 {
-    public function seleciona($table, $id)
+    public $table="";    
+    //===========================================================================================
+    //-------------------------------------------------------------------------------------------
+    //===========================================================================================
+    public function seleciona($id)
     {
-
+        $this->select = "select * from ".$this->table." where id = '".$id."'";
+        $this->Select();
+        if ($this->dados != null) {
+            echo json_encode($this->dados);
+        }else{
+            echo json_encode("retorno vazio");
+        }       
+        $this->Desconectar();
     }
+
+    //===========================================================================================
+    //-------------------------------------------------------------------------------------------
+    //===========================================================================================
     public function selecionaTodos()
     {
-        $sql = new database();
-        $sql->select = "select * from ".$this->table."";
-        $sql->Select();
-        //retorna em formato json
-        echo json_encode($this->dados);
-        $sql->Desconectar();
-
+        $this->select = "select * from ".$this->table."";
+        $this->Select();
+        if ($this->dados != null) {
+            echo json_encode($this->dados);
+        }else{
+            echo json_encode("retorno vazio");
+        }
+        $this->Desconectar();
     }
 
-    public function inserir()
+    //===========================================================================================
+    //-------------------------------------------------------------------------------------------
+    //===========================================================================================
+    public function inserir($fields)
     {
 
     }
 
-    public function atualizar()
+    //===========================================================================================
+    //-------------------------------------------------------------------------------------------
+    //===========================================================================================
+    //fields = json obj.
+    public function atualizar($id, $fields)
     {
 
     }
 
+    //===========================================================================================
+    //-------------------------------------------------------------------------------------------
+    //===========================================================================================
     public function apagar()
     {
 
