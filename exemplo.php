@@ -1,5 +1,5 @@
 <?php
 include('interface.php');
 $banco = new crud;
-$banco->table="eventos";
+$banco->table="pessoa";
 $banco->selecionaTodos();

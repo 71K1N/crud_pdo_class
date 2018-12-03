@@ -1,8 +1,8 @@
 <?php
 /*
-CLASSE:             DATABASE
+CLASSE:             CONEXAO
 AUTOR:              Luiz Carlos da Silva
-DATA DE CRIAÇÃO:    19/03/18-10:00
+DATA DE CRIA��O:    19/03/18-10:00
 ================================================
 1   -   CONSTRUTOR  -   LUIZ CARLOS -   19-03-18
 2   -   SELECT      -   LUIZ CARLOS -   19-03-18
@@ -12,7 +12,7 @@ DATA DE CRIAÇÃO:    19/03/18-10:00
 6   -   DESCONECTAR -   LUIZ CARLOS -   20-03-18
 ================================================
  */
-class conection extends PDO{
+class conexao extends PDO{
     public $select="";
     public $insert="";
     public $update="";
@@ -21,7 +21,7 @@ class conection extends PDO{
     //==================================================================================================================
     //CONSTRUCT
     //==================================================================================================================
-    public function __construct($dsn="mysql:host=localhost;dbname=eventos",$usuario="root",$senha="database")
+    public function __construct($dsn="mysql:host=localhost;dbname=CRUD",$usuario="root",$senha="")
     {
         try{
             $this->conn= parent::__construct($dsn, $usuario, $senha);

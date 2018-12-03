@@ -2,7 +2,7 @@
 /*
 CLASSE:             CRUD rest
 AUTOR:              Luiz Carlos da Silva
-DATA DE CRIAÇÃO:    25/05/18-15:16
+DATA DE CRIA��O:    25/05/18-15:16
 =====================================================
 1   -   seleciona       -   LUIZ CARLOS -   25-05-18
 2   -   selecionaTodos  -   LUIZ CARLOS -   25-05-18
@@ -12,7 +12,7 @@ DATA DE CRIAÇÃO:    25/05/18-15:16
 =====================================================
  */
 include 'conection.php';
-class crud extends conection
+class crud extends conexao
 {
     public $table="";    
     //===========================================================================================
